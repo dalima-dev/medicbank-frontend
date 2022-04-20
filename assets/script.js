@@ -1,6 +1,6 @@
 //const address = '192.168.0.6'; //You may change this to localhost or 127.0.0.1 if you're not using a wi-fi connection.
 //const baseURL = `http://${address}:3000/medic`;
-const baseURL = `https://medicbank-server.herokuapp.com/`;
+const baseURL = `https://medicbank-server.herokuapp.com/medic`;
 
 async function findAllMedics() {
   //Here we push our medic list data into HTML.
