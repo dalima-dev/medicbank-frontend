@@ -4,7 +4,7 @@ const baseURL = `https://medicbank-server.herokuapp.com/medic`;
 
 async function findAllMedics() {
   //Here we push our medic list data into HTML.
-  const response = await fetch(`${baseURL}/find-medics`);
+  const response = await fetch(`${baseURL}/find-medics`, { mode: 'cors' });
   const medics = await response.json();
 
   const medicList = document.querySelector('#medicList');
@@ -32,7 +32,9 @@ async function findAllMedics() {
 findAllMedics();
 
 async function findMedicById(idMedic) {
-  const response = await fetch(`${baseURL}/find-medics/${idMedic}`);
+  const response = await fetch(`${baseURL}/find-medics/${idMedic}`, {
+    mode: 'cors ',
+  });
   const medic = await response.json();
 
   let specialties = '';
@@ -142,7 +144,9 @@ async function openModalRegisterUpdate(status, idMedic) {
     </button>
     `;
 
-    const response = await fetch(`${baseURL}/find-medics/${idMedic}`);
+    const response = await fetch(`${baseURL}/find-medics/${idMedic}`, {
+      mode: 'cors',
+    });
     const medic = await response.json();
 
     document.querySelector('#name').value = medic.name;
