@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedicBank</title>
+    <link href="/assets/dist/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-['Roboto'] text-white bg-slate-300">
+    <header
+      class="m-2 p-5 flex justify-around items-center gap-4 bg-blue-400 rounded"
+    >
+      <h1 class="sm:text-3xl text-xl font-bold">Welcome to MedicBank!</h1>
+      <button
+        onclick="openModalRegisterUpdate('register')"
+        class="p-3 rounded bg-blue-800 shadow-lg shadow-blue-800/80 transition duration-300 ease-in-out hover:scale-110"
+      >
+        Register
+      </button>
+    </header>
+
+    <main class="container mx-auto p-2 min-h-[40rem] sm:min-h-[60rem]">
+      <section id="chosenMedic"></section>
+
+      <section
+        class="hidden z-[9999] absolute left-[50%] top-[60%] translate-x-[-50%] translate-y-[-50%] max-w-xs sm:max-w-lg container bg-blue-500 rounded-b-md rounded-t-md"
+        id="overlay"
+      >
+        <div class="flex flex-row justify-between items-center px-4 py-1">
+          <h2 id="registerTitle" class="hidden text-lg">Register medic:</h2>
+          <h2 id="updateTitle" class="hidden text-lg">Update medic:</h2>
+          <a
+            onclick="closeModalRegisterUpdate()"
+            class="text-red-500 text-xl transition-all ease-out duration-150 hover:scale-150 cursor-pointer"
+            >x</a
+          >
+        </div>
+
+        <div class="p-2">
+          <div class="flex flex-col">
+            <input
+              class="p-1 m-1 text-black border-2 border-slate-600"
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+            />
+            <input
+              class="p-1 m-1 text-black border-2 border-slate-600"
+              type="number"
+              name="crm"
+              id="crm"
+              placeholder="CRM"
+            />
+            <input
+              class="p-1 m-1 text-black border-2 border-slate-600"
+              type="number"
+              name="landline"
+              id="landline"
+              placeholder="Landline"
+            />
+            <input
+              class="p-1 m-1 text-black border-2 border-slate-600"
+              type="number"
+              name="phoneNumber"
+              id="phoneNumber"
+              placeholder="Phone Number"
+            />
+            <input
+              class="p-1 m-1 text-black border-2 border-slate-600"
+              type="number"
+              name="cep"
+              id="cep"
+              placeholder="CEP"
+            />
+            <div class="py-1 flex flex-col gap-2">
+              <p>Choose medic's specialties (at least two specialties):</p>
+              <div>
+                <input type="checkbox" name="alergology" value="Alergology" />
+                <label id="alergology" for="alergology">Alergology</label>
+              </div>
+              <div>
+                <input type="checkbox" name="angiology" value="Angiology" />
+                <label id="angiology" for="angiology">Angiology</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="bucoMaxillo"
+                  value="Buco maxillo"
+                />
+                <label id="bucoMaxillo" for="bucoMaxillo">Buco maxillo</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="clinicCardiology"
+                  value="Clinic cardiology"
+                />
+                <label id="clinicCardiology" for="clinicCardiology">
+                  Clinic cardiology</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="childrensCardiology"
+                  value="Children's cardiology"
+                />
+                <label id="childrensCardiology" for="childrensCardiology">
+                  Children's Cardiology</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="headNeckSurgery"
+                  value="Head and neck surgery"
+                />
+                <label id="headNeckSurgery" for="headNeckSurgery">
+                  Head and neck surgery</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="cardiacSurgery"
+                  value="Cardiac surgery"
+                />
+                <label id="cardiacSurgery" for="cardiacSurgery">
+                  Cardiac surgery</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="chestSurgery"
+                  value="Chest surgery"
+                />
+                <label id="chestSurgery" for="chestSurgery"
+                  >Chest surgery</label
+                >
+              </div>
+            </div>
+
+            <div id="registerUpdateButton" class="flex justify-center"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="medicList"
+        class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-6"
+      ></section>
+    </main>
+
+    <footer class="py-8 bg-blue-400 text-center">
+      Copyright @ 2022 MedicBank. All rights reserved.
+    </footer>
+
+    <script src="./assets/script.js"></script>
+  </body>
+</html>
